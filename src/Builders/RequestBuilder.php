@@ -53,7 +53,7 @@ namespace Timetabio\S3Helper\Builders
             $signature = new Signature($signingKey, $stringToSign);
             $credential = new Credential($configuration->getAccessKey(), $date, $configuration->getRegion());
 
-            $headersArray['authorization'] = new AuthorizationHeader($credential, $headers, $signature);
+            $headersArray['authorization'] = (string) new AuthorizationHeader($credential, $headers, $signature);
 
             return new Request(
                 $this->uriBuilder->buildBucketUrl() . $uri,
