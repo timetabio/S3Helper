@@ -20,12 +20,7 @@ namespace Timetabio\S3Helper\Builders
             $this->configuration = $configuration;
         }
 
-        public function buildUploadParams(
-            FileUpload $file,
-            int $maxUploadSize,
-            int $expires,
-            string $acl = 'public-read'
-        ): array
+        public function buildUploadParams(FileUpload $file, int $maxUploadSize, int $expires, string $acl = 'public-read'): array
         {
             $configuration = $this->configuration;
 
@@ -53,13 +48,7 @@ namespace Timetabio\S3Helper\Builders
             ];
         }
 
-        private function buildPolicy(
-            Date $date,
-            Date $expiration,
-            FileUpload $file,
-            Credential $credential,
-            int $maxUploadSize
-        ): array
+        private function buildPolicy(Date $date, Date $expiration, FileUpload $file, Credential $credential, int $maxUploadSize): array
         {
             return [
                 'expiration' => $expiration->getIsoString(),
