@@ -1,4 +1,7 @@
 <?php
+/**
+ * (c) 2016 Ruben Schmidmeister
+ */
 namespace Timetabio\S3Helper\Builders
 {
     class UriBuilder
